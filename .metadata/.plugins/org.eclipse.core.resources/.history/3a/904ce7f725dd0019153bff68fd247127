@@ -1,0 +1,10 @@
+package entities;
+
+import javax.persistence;
+
+@Entity(name="transaction_tbl")
+public class Transaction {
+
+	@Id
+	private Long Id;
+}

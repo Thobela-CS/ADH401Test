@@ -1,0 +1,34 @@
+package frontend;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+
+import model.TransactionModel;
+import service.TransactionEJB;
+
+@ManagedBean(name = "transactioncontroller")
+@SessionScoped
+public class TransactionController {
+
+	// @EJB
+//	private TransactionEJB transactionEJB;
+
+	// from form
+	@ManagedProperty(value = "#{transaction}")
+	private TransactionModel transaction;
+
+	public String addTransaction() {
+		 transactionEJB.addNew(transaction.getTransactionEntity());
+		return "index.xhtml";
+	}
+
+	public TransactionModel getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(TransactionModel transaction) {
+		this.transaction = transaction;
+	}
+}

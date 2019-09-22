@@ -1,0 +1,19 @@
+package frontend;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.SessionScoped;
+
+import entities.Transaction; 
+
+@ManagedBean(name = "transactioncontroller")
+@SessionScoped
+public class TransactionController {
+	@EJB
+	private TransactionEJB transactionEJB;
+}

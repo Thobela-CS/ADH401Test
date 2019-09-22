@@ -1,0 +1,6 @@
+package entities;
+
+@Entity(name="transaction_tbl")
+public class Transaction {
+
+}

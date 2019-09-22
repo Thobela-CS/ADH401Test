@@ -1,0 +1,22 @@
+package entities;
+
+import javax.persistence.*;
+
+@Entity(name="transaction_tbl")
+public class Transaction {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long Id;
+	
+	public String Name;
+	public String SourcePassport;
+	public String DestinationPassport;
+	public String DestinationBank;
+	public String DestationCountry;
+	public String AccountNumber;
+	public double Amount;
+	public String TransactionCode;
+	
+	
+}

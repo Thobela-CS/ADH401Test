@@ -1,0 +1,38 @@
+package service;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import entities.Transaction;
+
+/**
+ * Session Bean implementation class TransactionEJB
+ */
+@Stateless
+@LocalBean
+public class TransactionEJB {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	/**
+	 * Default constructor.
+	 */
+	public TransactionEJB() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void addNew(Transaction transactionEntity) {
+		System.out.println("============================");
+		System.out.println(transactionEntity.getName());
+		em.persist(transactionEntity);
+		System.out.println("============================");
+	}
+
+	public List<Transaction> getEmployeeEntites() {
+		System.out.println("==== Get All Employees ====");
+		return em.createQuery("SELECT c FROM employee_tbl c").getResultList();
+	}
+}
